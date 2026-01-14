@@ -140,7 +140,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0, 86, 179, 0.85), rgba(0, 86, 179, 0.78)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background: linear-gradient(rgba(0, 86, 179, 0.85), rgba(0, 86, 179, 0.78)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             color: var(--white);
@@ -270,7 +270,7 @@
             transform: translateX(5px);
         }
 
-        /* About Section */
+        /* About Section - Global Expertise */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -310,10 +310,8 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: var(--shadow);
-            height: 100%;
-            min-height: 400px;
+            height: 400px;
             position: relative;
-            background: var(--primary-light);
         }
 
         .about-image img {
@@ -321,7 +319,6 @@
             height: 100%;
             object-fit: cover;
             display: block;
-            border-radius: 10px;
         }
 
         /* Industries Section */
@@ -531,7 +528,7 @@
 
             .about-image {
                 order: -1;
-                min-height: 300px;
+                height: 300px;
             }
         }
 
@@ -653,7 +650,7 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
-            <h1>Bridging Languages, Connecting Worlds</h1>
+            <h1>Global Language Solutions Made Simple</h1>
             <p>Professional translation and localization services that make global communication simple, accurate, and effective for your business.</p>
             <div class="hero-buttons">
                 <a href="#services" class="cta-button">Explore Services</a>
@@ -789,8 +786,8 @@
                 </div>
                 
                 <div class="about-image">
-                    <!-- FIXED: Now showing a proper translation/language themed image -->
-                    <img src="https://images.unsplash.com/photo-1551836026-d5c2c3c7273a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Translator working on documents">
+                    <!-- FIXED: New image showing translation/language work -->
+                    <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Global language translation work">
                 </div>
             </div>
         </div>
@@ -983,7 +980,19 @@
         document.addEventListener('DOMContentLoaded', function() {
             const logoImg = document.querySelector('.logo-img');
             // In production, replace this with your actual logo URL
-            logoImg.src = 'scriptum.webp';
+            // logoImg.src = 'scriptum.jpg';
+            
+            // Test if about image is loading
+            const aboutImage = document.querySelector('.about-image img');
+            console.log('About image src:', aboutImage.src);
+            aboutImage.onload = function() {
+                console.log('About image loaded successfully');
+            };
+            aboutImage.onerror = function() {
+                console.log('Error loading about image');
+                // Fallback image
+                aboutImage.src = 'https://images.unsplash.com/photo-1551836026-d5c2c3c7273a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80';
+            };
         });
     </script>
 </body>
